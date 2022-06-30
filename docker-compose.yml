@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  python3.8-cpu-local:
+    build:
+      context: .
+      dockerfile: "Dockerfile"
+    container_name: python-local
+    user: root
+    image: python-cpu-image
+    ports:
+      - 8888:8888
+    volumes:
+            - ./:/workspace
+    tty: true
+
